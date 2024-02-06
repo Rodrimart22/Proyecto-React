@@ -1,0 +1,26 @@
+header {
+   display: flex;
+    justify-content: space-between;
+}
+
+div a img{
+    width: 30px;
+}
+
+
+div ul {
+display: flex;
+list-style: none;
+}
+
+
+div ul li a{
+    text-decoration: none;
+    color: black;
+    justify-content: space-around;
+    margin: 25px;
+}
+
+div ul li :hover {
+    color: rgb(72, 72, 72);
+  }
