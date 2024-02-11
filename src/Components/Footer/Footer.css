@@ -1,0 +1,30 @@
+footer {
+    display: grid;
+    grid-template-columns: 1fr  1fr;
+    grid-template-areas: "rrss copyright";
+    justify-items: center;
+    align-items: center;
+    margin-top: auto;
+  }
+  
+  footer .rrss {
+    grid-area: rrss;
+    margin: 10px;
+    color: black;
+    font-weight: bold;
+  }
+  footer .copyright {
+    grid-area: copyright;
+    color: black;
+    font-weight: bold;
+  }
+  footer div h4 {
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+  }
+  footer div img {
+    width: 50px;
+    margin: 10px;
+  }
+  

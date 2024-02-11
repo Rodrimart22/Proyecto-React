@@ -1,3 +1,13 @@
+ul {
+    display: flex;
+    list-style: none;
+    margin-right: 10px;
+}
+
+ul li img{
+    width: 30px;
+}
+
 div img{
     width: 30px;
 }
