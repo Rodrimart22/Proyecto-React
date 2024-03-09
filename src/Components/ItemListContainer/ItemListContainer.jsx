@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import ItemList from '../ItemList/ItemList'
 import "./ItemListContainer.css"
 import { useParams } from 'react-router-dom'
+import { db } from '../../firebase/config'
+import { collection, getDocs, query, where } from 'firebase/firestore'
 
 
 const ItemListContainer = () => {
@@ -13,25 +15,26 @@ const ItemListContainer = () => {
 
     useEffect(() => {
 
-        const fetchData = async () => {
-            try {
-                const response = await fetch("/bebidas.json");
-                const data = await response.json()
+        
+        const misBebidas = 
+        idcategoria ?
+       
+        query(collection(db, "bebidas"), where("categoria", "==", idcategoria))
+        
+        :
 
-if (idcategoria) {
-    const bebidasFiltradas = data.filter((p) => p.categoria == idcategoria)
-    setBebidas(bebidasFiltradas)
-} else {
-    setBebidas(data)
-}
+       collection(db, "bebidas")
+       
+       getDocs(misBebidas)
+       .then((res) => {
+        const nuevasBebidas = res.docs.map((doc) => {
+            const data = doc.data()
+            return{id: doc.id, ...data}
+        })
 
-                
-            } catch (error) {
-                console.log("Error en el fetch " + error)
-            }
-        }
+        setBebidas(nuevasBebidas)
 
-        fetchData();
+       })
 
     }, [idcategoria])
 

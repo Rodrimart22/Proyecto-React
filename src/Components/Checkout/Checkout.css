@@ -1,0 +1,39 @@
+.formulario {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+
+  button{
+    margin: 10px;
+    border-radius: 5px;
+    justify-content: center;
+    background-color: #fff;
+    border-color: #353535;
+
+}
+
+   button:hover{
+    background-color: #e7e5e5;
+}
+ 
+  

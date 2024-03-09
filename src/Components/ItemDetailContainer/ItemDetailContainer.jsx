@@ -1,6 +1,8 @@
 import React, {useState,useEffect} from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { Link, useParams } from 'react-router-dom';
+import { db } from '../../firebase/config';
+import { doc, getDoc } from 'firebase/firestore';
 
 
 const ItemDetailContainer = () => {
@@ -10,19 +12,15 @@ const ItemDetailContainer = () => {
   const {id} = useParams()
 
     useEffect(()=>{
-        
-      const fetchData = async () => {
-          try {
-              const response = await fetch("/bebidas.json");
-              const data = await response.json()
-              const bebida = data.find((bebida)=>bebida.id == id)
-              setBebida(bebida)
-          }catch(error){
-              console.log("Error en el fetch "+error)
-          }
-      }
 
-      fetchData()
+      const nuevoDoc = doc(db, "bebidas", id)
+
+      getDoc(nuevoDoc)
+      .then(res => {
+        const data = res.data()
+        const bebidaNueva = {id: res.id,...data}
+        setBebida(bebidaNueva)
+      })
 
   },[id])
     

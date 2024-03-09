@@ -1,8 +1,7 @@
 import React from 'react';
-import ItemCount from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
 
-const Item = ({ bebida }) => {
+const Item = ( {bebida} ) => {
 
     return (
 

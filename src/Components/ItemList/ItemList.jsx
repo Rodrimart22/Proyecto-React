@@ -9,7 +9,7 @@ const ItemList = ({ bebidas }) => {
       {
         bebidas.map((bebida) => {
           return (
-            <Item bebida = {bebida}/>
+            <Item key={bebida.id} bebida = {bebida}/>
           )}
         )}
     </div>

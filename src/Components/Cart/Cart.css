@@ -1,0 +1,27 @@
+.carrito h3{
+    text-align: center;
+}
+
+
+.carrito h2{
+    text-align: center;
+}
+
+.carrito button{
+    margin: 10px;
+    border-radius: 5px;
+    justify-content: center;
+    background-color: #fff;
+    border-color: #353535;
+
+}
+
+.carrito button:hover{
+    background-color: #e7e5e5;
+}
+
+.carrito a{
+    text-decoration: none;
+    color: black;
+}
+
