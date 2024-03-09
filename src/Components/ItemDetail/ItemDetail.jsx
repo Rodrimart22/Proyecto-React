@@ -31,7 +31,7 @@ const ItemDetail = ({ bebida }) => {
             {bebida.stock == 0 ?
                 <h2>Sin Stock</h2>
                 :
-                Cart ? <Link to='/Carrito'>Ir al carrito</Link> : <ItemCount inicio={1} stock={bebida.stock} Agregar={Agregar} />
+                Cart ? <button><Link to='/Carrito'>Ir al carrito</Link></button> : <ItemCount inicio={1} stock={bebida.stock} Agregar={Agregar} />
             }
 
         </div>
